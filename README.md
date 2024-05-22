@@ -1,4 +1,3 @@
-
 # Text Adventure Game
 Description:
 This project is an interactive text adventure game where the player makes choices to progress through the story. The game starts with the player standing at the edge of an ancient stone bridge, with a choice to either take a path into a forest or cross the bridge into a shadowy land. The player's decisions lead to different story outcomes.
@@ -42,7 +41,7 @@ Sample Questions:
     -Which button do you press to turn on a computer?
     -What is GPU stands for?
 
-#Rock-Paper-Scissors Game
+# Rock-Paper-Scissors Game
 
 Description:
 

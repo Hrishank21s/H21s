@@ -1,4 +1,7 @@
-#This is the verson 2 of my data collection project with login and signup save file in .txt form
+#this is just to grind
+#data collection using def
+
+#above file is for getting the weather information after login.
 def USER_INFORMATION():
     full_name = input("What is your full Name?: ").lower()
     adhar_number = input("What is your Adhar number: ").lower()
@@ -26,12 +29,12 @@ def USER_INFORMATION():
         USER_INFORMATION()
     else:
         print("INVALID COMMAND!!!!")
-
+    pass
 
 def USER_LOGIN():
     username = input("USER NAME: ")
-    password1 = input("PASSWORD: ")
-    password2 = input("PASSWORD: ")
+    password1 = input("ENTER PASSWORD: ")
+    password2 = input("RE-ENTER PASSWORD: ")
     if password1==password2:
         try:
             filename = "user_data.txt"
@@ -39,12 +42,13 @@ def USER_LOGIN():
                 user_data = file.read()
                 if username in user_data and password1 in user_data:
                     print("Login successful!")
+                    quit()
                 else:
                     print("Invalid username or password. Please try again.")
         except FileNotFoundError:
             print("User data file not found.")
             No_data = input("Please let us know if you want to login?(Y/N): ").lower()
-            if no_data == "y":
+            if No_data == "y":
                 print("Please mention the details below")
                 USER_INFORMATION()
             else:print('Thanks for your time, Have a good one!')
@@ -52,8 +56,22 @@ def USER_LOGIN():
     else:
         print("PASSWORD IS NOT MATCHING!")
         USER_LOGIN()
+    pass
 
 
+def WELCOME():
+    welcome_user = input("Hey! welcome to my first project, are you new here? (Y/N)").lower()
+    if welcome_user == "y":
+        SIGNUP = input("Great welcome onboard! please select '1' for continue signup or '2' for quit here.")
+        if SIGNUP== "1":
+            print("Thanks for moving forward, please mention your details below for onboarding!")
+            USER_INFORMATION()
+        elif SIGNUP== "2":
+            print("Be back soon!")
+            quit()
+    elif welcome_user == "n":
+        print("Ohh! Existing user, please login below.")
+        USER_LOGIN()
+    else:print("Invalid Command")
+    quit()
 
-
-USER_LOGIN()
